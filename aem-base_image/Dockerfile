@@ -8,7 +8,7 @@ WORKDIR /opt/aem
 COPY license.properties .
 
 # Copy Quickstart jar file
-COPY cq-quickstart-6.5.0.jar cq-quickstart.jar
+COPY cq-quickstart-6.5.0.jar /cq-quickstart.jar
 
 # Install Java
 RUN apt-get update && \
