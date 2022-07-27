@@ -13,14 +13,16 @@ phases:
       - docker build -t aem-base-image .
       - docker tag aem-base-image:latest 077344799555.dkr.ecr.us-east-1.amazonaws.com/aem-base-image:latest
       - docker push 077344799555.dkr.ecr.us-east-1.amazonaws.com/aem-base-image:latest
+      - cd ..
+      - cd aem-author
+      - docker build -t aem-base-image .
+      - docker tag aem-base-image:latest 077344799555.dkr.ecr.us-east-1.amazonaws.com/aem-base-image:latest
+      - aws ecr batch-delete-image --repository-name aem-base-image --image-ids imageTag=latest
+      
       
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 077344799555.dkr.ecr.us-east-1.amazonaws.com
-      - cd ..
-      - cd aem-author
-      - docker build -t aem-author .
-      - docker tag aem-author:latest 077344799555.dkr.ecr.us-east-1.amazonaws.com/aem-author:latest
-      - docker push 077344799555.dkr.ecr.us-east-1.amazonaws.com/aem-author:latest
+      - docker push 077344799555.dkr.ecr.us-east-1.amazonaws.com/aem-base-image:latest
+      
