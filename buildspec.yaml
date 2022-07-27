@@ -17,7 +17,7 @@ phases:
       - cd aem-author
       - docker build -t aem-base-image .
       - docker tag aem-base-image:latest 077344799555.dkr.ecr.us-east-1.amazonaws.com/aem-base-image:latest
-      - aws ecr batch-delete-image --repository-name aem-base-image --image-ids imageTag=latest
+      - aws ecr batch-delete-image --repository-name aem-base-image --image-ids imageTag=version
       
       
   post_build:
