@@ -10,9 +10,9 @@ phases:
       - echo Build started on `date`
       - cd aem-base_image
       - echo Building the Docker image...    
-      - docker build -t aem-base-image .
-      - docker tag aem-base-image:latest 077344799555.dkr.ecr.us-east-1.amazonaws.com/aem-base-image:latest
-      - cd ..
+#       - docker build -t aem-base-image .
+#       - docker tag aem-base-image:latest 077344799555.dkr.ecr.us-east-1.amazonaws.com/aem-base-image:latest
+#       - cd ..
       - cd aem-author
       - docker build -t aem-author .
       - docker tag aem-author:latest 077344799555.dkr.ecr.us-east-1.amazonaws.com/aem-author:latest
@@ -20,5 +20,5 @@ phases:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push 077344799555.dkr.ecr.us-east-1.amazonaws.com/aem-base-image:latest
+      #- docker push 077344799555.dkr.ecr.us-east-1.amazonaws.com/aem-base-image:latest
       - docker push 077344799555.dkr.ecr.us-east-1.amazonaws.com/aem-author:latest
