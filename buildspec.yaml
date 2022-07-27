@@ -9,7 +9,7 @@ phases:
     commands:
       - echo Build started on `date`
       - cd aem-base_image
-      - echo Building the Docker image...    
+      - echo Building the Docker image......   
       - docker build -t aem-base-image .
       - docker tag aem-base-image:latest 077344799555.dkr.ecr.us-east-1.amazonaws.com/aem-base-image:version
       - docker push 077344799555.dkr.ecr.us-east-1.amazonaws.com/aem-base-image:version
