@@ -1,6 +1,5 @@
 # Use the previously created aem-base-image
-FROM aem-base-image
-
+FROM 077344799555.dkr.ecr.us-east-1.amazonaws.com/aem-author:latest
 # Expose AEM author in port 4502
 EXPOSE 4502
 
