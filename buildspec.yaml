@@ -26,5 +26,6 @@ phases:
       - cd aem-author
       - docker build -t aem-author .
       - docker tag aem-author:latest 077344799555.dkr.ecr.us-east-1.amazonaws.com/aem-author:latest
+      - docker images
       - docker push 077344799555.dkr.ecr.us-east-1.amazonaws.com/aem-author:latest
       
