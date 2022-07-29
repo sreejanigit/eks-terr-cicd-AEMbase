@@ -24,6 +24,8 @@ phases:
       - echo Pushing the Docker image......
       - cd ..
       - cd aem-author
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 077344799555.dkr.ecr.us-east-1.amazonaws.com
+      - docker login --username="sreejani" --password="godisgreat@123"
       - docker build -t aem-author .
       - docker tag aem-author:latest 077344799555.dkr.ecr.us-east-1.amazonaws.com/aem-author:latest
       - docker images
