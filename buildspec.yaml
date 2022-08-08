@@ -18,6 +18,7 @@ phases:
       - cd ..
       - cd aem-author
       - docker build -t aem-author .
+      - docker images
       - docker run -p 4502:4502 aem-author
       - curl http://localhost:4502
       #- docker tag aem-author:latest 077344799555.dkr.ecr.us-east-1.amazonaws.com/aem-author:latest
