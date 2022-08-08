@@ -8,6 +8,8 @@ phases:
       - docker login --username="sreejani" --password="godisgreat@123"
   build:
     commands:
+      - git clone https://github.com/sreejanigit/eks-terr-cicd-AEMbase.git
+      - cd eks-terr-cicd-AEMbase
       - echo Build started on `date`
       - cd aem-base_image
       - echo Building the Docker image......   
