@@ -8,7 +8,9 @@ phases:
       - docker login --username="sreejani" --password="godisgreat@123"
   build:
     commands:
-      - git clone https://github.com/sreejanigit/eks-terr-cicd-AEMbase.git
+      #- git clone https://github.com/sreejanigit/eks-terr-cicd-AEMbase.git
+      - aws s3 cp s3://aem-bkt-terr-nvir/aem-base_image/ aem-base_image/ --recursive
+      - aws s3 cp s3://aem-bkt-terr-nvir/aem-author/ aem-author/ --recursive
       - cd eks-terr-cicd-AEMbase
       - echo Build started on `date`
       - cd aem-base_image
