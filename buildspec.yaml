@@ -8,8 +8,11 @@ phases:
     commands:
       #- cd eks-terr-cicd-AEMbase
       - echo Build started on `date`
-      - sudo apt install unzip
-      - unzip -q aem-zip
+#       - sudo apt install unzip
+#       - unzip -q aem-zip
+      - ls -ltr
+      - sudo apt install p7zip-full
+      - 7z x aem-zip
       - cd aem-zip
       - ls -ltr
       - cd aem-base_image
