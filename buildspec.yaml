@@ -1,5 +1,4 @@
 version: 0.2
-
 phases:
   pre_build:
     commands:
@@ -9,10 +8,10 @@ phases:
   build:
     commands:
       #- git clone https://github.com/sreejanigit/eks-terr-cicd-AEMbase.git
-      - aws s3 cp s3://aem-bkt-terr-nvir/aem-base_image/ aem-base_image/ --recursive
-      - aws s3 cp s3://aem-bkt-terr-nvir/aem-author/ aem-author/ --recursive
-      - cd eks-terr-cicd-AEMbase
+      #- cd eks-terr-cicd-AEMbase
       - echo Build started on `date`
+      - tar -xf aem-zip.zip
+      - cd aem-zip
       - cd aem-base_image
       - echo Building the Docker image......   
       - docker build -t aem-base-image .
@@ -35,12 +34,4 @@ phases:
       - echo Pushing the Docker image....
 #       - cd ..
 #       - cd aem-author
-#       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 077344799555.dkr.ecr.us-east-1.amazonaws.com
-#       - docker login --username="sreejani" --password="godisgreat@123"
-#       - docker rmi --force aem-author
-#       - docker build -t aem-author .      
-#       - docker tag aem-author:latest 077344799555.dkr.ecr.us-east-1.amazonaws.com/aem-author:latest
-#       - docker images
       - docker push 077344799555.dkr.ecr.us-east-1.amazonaws.com/aem-author:latest
-      
-      
