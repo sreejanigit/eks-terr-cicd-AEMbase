@@ -3,7 +3,7 @@ version: 0.2
 phases:
   pre_build:
     commands:
-@@ -9,10 +8,10 @@ phases:
+
   build:
     commands:
       #- cd eks-terr-cicd-AEMbase
@@ -13,7 +13,7 @@ phases:
       - cd aem-base_image
       - echo Building the Docker image......   
       - docker build -t aem-base-image .
-@@ -35,12 +34,4 @@ phases:
+  post_build:
       - echo Pushing the Docker image....
 #       - cd ..
 #       - cd aem-author
