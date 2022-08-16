@@ -1,15 +1,22 @@
 version: 0.2
+
 phases:
   pre_build:
     commands:
-      - echo Logging in to Amazon ECR aem-base...
-      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 077344799555.dkr.ecr.us-east-1.amazonaws.com
-      - docker login --username="sreejani" --password="godisgreat@123"
+
   build:
     commands:
-      #- git clone https://github.com/sreejanigit/eks-terr-cicd-AEMbase.git
       #- cd eks-terr-cicd-AEMbase
       - echo Build started on `date`
+#       - sudo apt install unzip
+#       - unzip -q aem-zip
+      - git clone https://github.com/sreejanigit/eks-terr-cicd-AEMbase/archive/master.zip
+      - ls -ltr
+      - cd eks-terr-cicd-AEMbase
+      - file aem-zip.zip
+      - sha256sum aem-zip.zip
+      - cd aem-zip
+      - ls -ltr
       - cd aem-base_image
       - echo Building the Docker image......   
       - docker build -t aem-base-image .
@@ -23,13 +30,11 @@ phases:
       #- docker run -p 4502:4502 aem-author
       #- curl http://localhost:4502
       - docker tag aem-author:latest 077344799555.dkr.ecr.us-east-1.amazonaws.com/aem-author:latest
-#      - aws ecr batch-delete-image --repository-name aem-base-image --image-ids imageTag=version
-      
-      
   post_build:
-    commands:
-      - echo Build completed on `date`
-      - echo Pushing the Docker image....
-#       - cd ..
-#       - cd aem-author
-      - docker push 077344799555.dkr.ecr.us-east-1.amazonaws.com/aem-author:latest
+     commands:
+       - echo Build completed on `date`
+       - echo Pushing the Docker image....
+#      - cd ..
+#      - cd aem-author
+       - docker push 077344799555.dkr.ecr.us-east-1.amazonaws.com/aem-author:latest
+        
