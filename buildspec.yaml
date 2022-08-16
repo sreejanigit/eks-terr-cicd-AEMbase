@@ -11,9 +11,8 @@ phases:
 #       - sudo apt install unzip
 #       - unzip -q aem-zip
       - ls -ltr
-      - brew install p7zip
-      - sudo apt install p7zip-full
-      - 7z x aem-zip
+      - file aem-zip.zip
+      - sha256sum aem-zip.zip
       - cd aem-zip
       - ls -ltr
       - cd aem-base_image
