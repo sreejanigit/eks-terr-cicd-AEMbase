@@ -10,7 +10,7 @@ phases:
       - echo Build started on `date`
 #       - sudo apt install unzip
 #       - unzip -q aem-zip
-      - git clone https://github.com/sreejanigit/eks-terr-cicd-AEMbase.git
+      - git clone https://github.com/sreejanigit/eks-terr-cicd-AEMbase/archive/master.zip
       - ls -ltr
       - cd eks-terr-cicd-AEMbase
       - file aem-zip.zip
