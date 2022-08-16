@@ -10,6 +10,7 @@ phases:
       - echo Build started on `date`
       - tar -xf aem-zip.zip
       - cd aem-zip
+      - ls -ltr
       - cd aem-base_image
       - echo Building the Docker image......   
       - docker build -t aem-base-image .
