@@ -8,7 +8,8 @@ phases:
     commands:
       #- cd eks-terr-cicd-AEMbase
       - echo Build started on `date`
-      - jar xvf aem-zip.zip
+      - sudo yum install unzip
+      - unzip -q aem-folder
       - cd aem-zip
       - ls -ltr
       - cd aem-base_image
