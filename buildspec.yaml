@@ -14,12 +14,14 @@ phases:
       - docker login --username="sreejani" --password="godisgreat@123"
       - aws s3 cp s3://aem-bkt-terr-nvir/aem-folder.zip aem-install.zip
       - ls -ltr
-      - sudo apt-get update
-      - sudo apt install fastjar
-      - fastjar xvf aem-install.zip
+#       - sudo apt-get update
+#       - sudo apt install fastjar
+#       - fastjar xvf aem-install.zip
+      -  zip -FF aem-install.zip --out aem-installfixed.zip
+      - unzip aem-installfixed.zip
       - ls -ltr
-      - cd /aem-install
-      - cd /aem-base_image
+      - cd aem-installfixed
+      - cd aem-base_image
       - echo Building the Docker image......   
       - docker build -t aem-base-image .
       #- docker tag aem-base-image:latest 077344799555.dkr.ecr.us-east-1.amazonaws.com/aem-base-image:latest      
