@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Using 'ubuntu' as the base image here
 FROM ubuntu
 
@@ -44,4 +43,4 @@ RUN apt-get update && \
 
 # Unack the Jar file
 RUN java -jar cq-quickstart.jar -unpack
->>>>>>> 449a24bcc0e0270b54a20af25d83d7619226ced4
+
