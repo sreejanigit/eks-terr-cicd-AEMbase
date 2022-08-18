@@ -17,7 +17,11 @@ phases:
 #       - sha256sum aem-zip.zip
 #       - cd aem-zip
 #       - ls -ltr
-      - sudo apt-get install git-lfs
+      - curl https://github.com/git-lfs/git-lfs/releases/download/v2.9.0/git-lfs-linux-amd64-v2.9.0.tar.gz
+      - cd ~/Downloads
+      - tar -xf git-lfs-linux-amd64-v2.9.0.tar.gz
+      - chmod 755 install.sh
+      - sudo ./install.sh
       - git lfs install
       - git remote add aem https://github.com/sreejanigit/eks-terr-cicd-AEMbase.git
       - git lfs aem pull 
