@@ -28,7 +28,6 @@ phases:
 #       - ls -ltr
       - unzip aem-install.zip
       - ls -ltr
-      - cd aem-install
       - cd aem-base_image
       - echo Building the Docker image......   
       - docker build -t aem-base-image .
