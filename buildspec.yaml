@@ -7,8 +7,8 @@ phases:
       - tar xzf git-lfs-linux-amd64-v2.13.2.tar.gz
       - ./install.sh
       - git lfs install
-      #- git clone https://github.com/sreejanigit/eks-terr-cicd-AEMbase.git
-      - git remote add aem https://github.com/sreejanigit/eks-terr-cicd-AEMbase.git
+      - git lfs clone https://github.com/sreejanigit/eks-terr-cicd-AEMbase.git
+      - git lfs fetch --all
       - git lfs pull 
       - ls -ltr
       - cd eks-terr-cicd-AEMbase
