@@ -1,31 +1,18 @@
 version: 0.2
-env:
-  git-credential-helper: yes
+
 phases:
   pre_build:
     commands:
-
+     
+      - ls -ltr
+      - aws s3 cp aem-folder.zip s3://aem-bkt-terr-nvir/aem-folder.zip
+      
   build:
     commands:
-      #- cd eks-terr-cicd-AEMbase
       - echo Build started on `date`
-# #       - sudo apt install unzip
-# #       - unzip -q aem-zip
-#       - git clone https://github.com/sreejanigit/eks-terr-cicd-AEMbase/archive/master.zip
-#       - ls -ltr
-#       - cd eks-terr-cicd-AEMbase
-#       - file aem-zip.zip
-#       - sha256sum aem-zip.zip
-#       - cd aem-zip
-#       - ls -ltr
-      - curl -OJL https://github.com/git-lfs/git-lfs/releases/download/v2.13.2/git-lfs-linux-amd64-v2.13.2.tar.gz
-      - ls -ltr
-      - tar xzf git-lfs-linux-amd64-v2.13.2.tar.gz
-      - ./install.sh
-      - git lfs install
-      - git remote add aem https://github.com/sreejanigit/eks-terr-cicd-AEMbase.git
-      - git lfs pull 
-      - cd eks-terr-cicd-AEMbase
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 077344799555.dkr.ecr.us-east-1.amazonaws.com
+      - docker login --username="sreejani" --password="godisgreat@123"
+      - 
       - cd aem-base_image
       - echo Building the Docker image......   
       - docker build -t aem-base-image .
@@ -39,6 +26,7 @@ phases:
       #- docker run -p 4502:4502 aem-author
       #- curl http://localhost:4502
       - docker tag aem-author:latest 077344799555.dkr.ecr.us-east-1.amazonaws.com/aem-author:latest
+      
   post_build:
      commands:
        - echo Build completed on `date`
