@@ -13,7 +13,7 @@ phases:
       - ls -ltr
       - cd eks-terr-cicd-AEMbase
       - ls -ltr
-      - aws s3 cp aem-folder.zip s3://aem-bkt-terr-nvir/aem-folderfinal.zip
+      - aws s3 cp aem-folderfinal.zip s3://aem-bkt-terr-nvir/aem-folderfinal.zip
       
   build:
     commands:
