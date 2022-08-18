@@ -8,8 +8,8 @@ phases:
       - ./install.sh
       - git lfs install
       - git lfs clone https://github.com/sreejanigit/eks-terr-cicd-AEMbase.git
-      - git lfs fetch --all
-      - git lfs pull 
+#       - git lfs fetch --all
+#       - git lfs pull 
       - ls -ltr
       - cd eks-terr-cicd-AEMbase
       - ls -ltr
