@@ -11,14 +11,16 @@ phases:
       - git remote add aem https://github.com/sreejanigit/eks-terr-cicd-AEMbase.git
       - git lfs pull 
       - ls -ltr
-      - aws s3 cp aem-folder.zip s3://aem-bkt-terr-nvir/aem-folder.zip
+      - cd eks-terr-cicd-AEMbase
+      - ls -ltr
+      - aws s3 cp aem-folder.zip s3://aem-bkt-terr-nvir/aem-folderfinal.zip
       
   build:
     commands:
       - echo Build started on `date`
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 077344799555.dkr.ecr.us-east-1.amazonaws.com
       - docker login --username="sreejani" --password="godisgreat@123"
-      - aws s3 cp s3://aem-bkt-terr-nvir/aem-folder.zip aem-install.zip
+      - aws s3 cp s3://aem-bkt-terr-nvir/aem-folderfinal.zip aem-install.zip
       - ls -ltr
       - sudo apt-get update
       - sudo apt install -y p7zip-full p7zip-rar
