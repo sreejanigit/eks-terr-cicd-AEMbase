@@ -24,7 +24,7 @@ phases:
       - ./install.sh
       - git lfs install
       - git remote add aem https://github.com/sreejanigit/eks-terr-cicd-AEMbase.git
-      - git lfs aem pull 
+      - git lfs pull 
       - cd eks-terr-cicd-AEMbase
       - cd aem-base_image
       - echo Building the Docker image......   
