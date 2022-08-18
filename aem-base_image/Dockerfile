@@ -20,7 +20,7 @@ RUN apt-get update && \
 
 # Unack the Jar file
 RUN java -jar cq-quickstart.jar -unpack
-=======
+
 # Using 'ubuntu' as the base image here
 FROM ubuntu
 
