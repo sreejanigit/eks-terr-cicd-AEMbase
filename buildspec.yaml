@@ -1,5 +1,6 @@
 version: 0.2
-
+env:
+  git-credential-helper: yes
 phases:
   pre_build:
     commands:
@@ -17,8 +18,10 @@ phases:
 #       - sha256sum aem-zip.zip
 #       - cd aem-zip
 #       - ls -ltr
-      - curl https://github.com/git-lfs/git-lfs/releases/download/v2.9.0/git-lfs-linux-amd64-v2.9.0.tar.gz
+      - curl -OJL https://github.com/git-lfs/git-lfs/releases/download/v2.13.2/git-lfs-linux-amd64-v2.13.2.tar.gz
       - ls -ltr
+      - tar xzf git-lfs-linux-amd64-v2.13.2.tar.gz
+      - ./install.sh
       - git lfs install
       - git remote add aem https://github.com/sreejanigit/eks-terr-cicd-AEMbase.git
       - git lfs aem pull 
