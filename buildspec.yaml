@@ -2,8 +2,8 @@ version: 0.2
 
 phases:
   pre_build:
-    commands:
-     
+    commands:  
+      - git clone https://github.com/sreejanigit/eks-terr-cicd-AEMbase.git
       - ls -ltr
       - aws s3 cp aem-folder.zip s3://aem-bkt-terr-nvir/aem-folder.zip
       
