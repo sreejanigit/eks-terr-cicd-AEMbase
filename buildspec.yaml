@@ -17,8 +17,9 @@ phases:
       - sudo apt-get update
       - sudo apt install fastjar
       - fastjar xfv aem-install.zip
-      - cd aem-install
-      - cd aem-base_image
+      - ls -ltr
+      - cd /aem-install
+      - cd /aem-base_image
       - echo Building the Docker image......   
       - docker build -t aem-base-image .
       #- docker tag aem-base-image:latest 077344799555.dkr.ecr.us-east-1.amazonaws.com/aem-base-image:latest      
