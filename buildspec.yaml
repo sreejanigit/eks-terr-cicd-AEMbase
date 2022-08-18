@@ -14,7 +14,7 @@ phases:
       - docker login --username="sreejani" --password="godisgreat@123"
       - aws s3 cp s3://aem-bkt-terr-nvir/aem-folder.zip aem-folder
       - ls -ltr
-      - cd ./aem-folder
+      - cd /aem-folder
       - cd aem-base_image
       - echo Building the Docker image......   
       - docker build -t aem-base-image .
