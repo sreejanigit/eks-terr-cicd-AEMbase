@@ -16,7 +16,7 @@ phases:
       - ls -ltr
       - sudo apt-get update
       - sudo apt install fastjar
-      - fastjar xfv aem-install.zip
+      - fastjar xvf aem-install.zip
       - ls -ltr
       - cd /aem-install
       - cd /aem-base_image
