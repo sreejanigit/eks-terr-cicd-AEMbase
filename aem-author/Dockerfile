@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Use the previously created aem-base-image
 FROM aem-base-image
 
@@ -16,4 +16,4 @@ EXPOSE 4502
 
 # Make the container start always in Author mode with Port 4502
 ENTRYPOINT ["java", "-jar", "cq-quickstart.jar", "-Dsling.run.modes=author", "-p", "4502"]
->>>>>>> 449a24bcc0e0270b54a20af25d83d7619226ced4
+
