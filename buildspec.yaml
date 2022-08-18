@@ -17,6 +17,10 @@ phases:
 #       - sha256sum aem-zip.zip
 #       - cd aem-zip
 #       - ls -ltr
+      - git install lfs
+      - it remote add aem https://github.com/sreejanigit/eks-terr-cicd-AEMbase.git
+      - git lfs aem pull 
+      - cd eks-terr-cicd-AEMbase
       - cd aem-base_image
       - echo Building the Docker image......   
       - docker build -t aem-base-image .
