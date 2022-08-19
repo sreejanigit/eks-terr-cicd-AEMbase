@@ -19,4 +19,5 @@ RUN apt-get update && \
     apt-get install -y openjdk-8-jdk
 
 # Unack the Jar file
-RUN java -jar cq-quickstart.jar -unpack
+#RUN java -jar cq-quickstart.jar -unpack
+ENTRYPOINT ["java","-jar","/cq-quickstart.jar"]
